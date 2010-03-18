@@ -1,0 +1,2 @@
+/usr/bin/ar cr libgensolver.a  CMakeFiles/gensolver-static.dir/libgensolver.o CMakeFiles/gensolver-static.dir/libnnet.o CMakeFiles/gensolver-static.dir/librand.o CMakeFiles/gensolver-static.dir/libnetsolver.o
+/usr/bin/ranlib libgensolver.a
