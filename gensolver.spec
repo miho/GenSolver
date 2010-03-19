@@ -20,7 +20,7 @@ Group:        System/Libraries
 Summary:      Genetic algorithm with support for neural networks
 BuildRoot:    %{_tmppath}/%{name}-%{version}-build  
 URL:          http://github.com/miho/GenSolver
-Version:      0.2_HEAD
+Version:      0.2
 Release:      0
 Source:       %name-%{version}.tar.gz
   
@@ -55,7 +55,7 @@ rm -rf $RPM_BUILD_ROOT
   
 %files
 %defattr(-,root,root)
-/usr/lib/gensolver/
-/usr/lib/gensolver/*
-/usr/linclude/gensolver
+%{_libdir}/gensolver/
+%{_libdir}/gensolver/*
+/usr/include/gensolver
 /usr/include/gensolver/*
