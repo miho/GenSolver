@@ -29,6 +29,6 @@ target_link_libraries( gensolver
 		#target_link_libraries( gensolver-static
 		#	${FLEXPARS_LIBRARY}			
 		#	)
-install(TARGETS gensolver DESTINATION lib/gensolver)
-install(TARGETS gensolver-static DESTINATION lib/gensolver)
+install(TARGETS gensolver DESTINATION lib${LIB_SUFFIX}/gensolver)
+install(TARGETS gensolver-static DESTINATION lib${LIB_SUFFIX}/gensolver)
 INSTALL(DIRECTORY ../include/ DESTINATION include/gensolver)

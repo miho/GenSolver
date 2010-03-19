@@ -20,7 +20,7 @@ Group:        System/Libraries
 Summary:      Genetic algorithm with support for neural networks
 BuildRoot:    %{_tmppath}/%{name}-%{version}-build  
 URL:          http://github.com/miho/GenSolver
-Version:      0.2-HEAD
+Version:      0.2_HEAD
 Release:      0
 Source:       %name-%{version}.tar.gz
   
@@ -38,7 +38,12 @@ Authors:
   
 %build 
 
-cmake -DCMAKE_INSTALL_PREFIX=$RPM_BUILD_ROOT/usr .
+%ifarch x86_64
+  cmake -DCMAKE_INSTALL_PREFIX=$RPM_BUILD_ROOT/usr . -DLIB_SUFFIX=64
+%else
+  cmake -DCMAKE_INSTALL_PREFIX=$RPM_BUILD_ROOT/usr .
+%endif
+
 make  
   
 %install  
@@ -50,5 +55,7 @@ rm -rf $RPM_BUILD_ROOT
   
 %files
 %defattr(-,root,root)
+/usr/lib/gensolver/
 /usr/lib/gensolver/*
+/usr/linclude/gensolver
 /usr/include/gensolver/*
